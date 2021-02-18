@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  background: rgb(29, 29, 29);
+}
+
+.App {
+  height: 200vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(63, 62, 62);
+}
+
+::-webkit-scrollbar-thumb {
+  background:  rgb(255, 145, 0);
+  /* border: 1px solid black; */
+  border-radius: 25px;
+}
+
+/* LOGIN SIGNUP FORM */
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  border: 2px solid red;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form {
+  height: 900px;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+  border-radius: 40px;
+  background: rgb(54, 54, 54);
+  border-left: 1px solid orange;
+  border-right: 1px solid orange;
+}
+
+.form p {
+  font-size: 50px;
+  color: rgb(241, 196, 15);
+  background: rgb(54, 54, 54);
+  font-weight: bolder;
+}
+
+.form span {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  height: 15vh;
+  width: 100%;
+  margin-top: 45px;
+  border-top: 2px solid orange;
+  background: rgb(37, 37, 37);
+  color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
