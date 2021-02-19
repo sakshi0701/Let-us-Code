@@ -2,6 +2,7 @@
 
 # dependencies
 README.md
+.enc.local
 /node_modules
 /.pnp
 .pnp.js

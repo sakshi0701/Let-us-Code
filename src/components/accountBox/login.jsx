@@ -1,7 +1,8 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext,useRef, useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useHistory } from "react-router-dom"
-import { Alert } from "react-bootstrap"
+import { Alert } from "react-bootstrap";
+
 import {
   BoldLink,
   BoxContainer,
@@ -13,13 +14,12 @@ import {
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
 
-export function SignupForm(props) {
-  const { switchToSignin } = useContext(AccountContext);
+export default function LoginForm(props) {
+  const { switchToSignup } = useContext(AccountContext);
 
   const emailRef = useRef()
   const passwordRef = useRef()
-  const passwordConfirmRef = useRef()
-  const { signup } = useAuth()
+  const { login } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useHistory()
@@ -27,38 +27,34 @@ export function SignupForm(props) {
   async function handleSubmit(e) {
     e.preventDefault()
 
-    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError("Passwords do not match")
-    }
-
     try {
       setError("")
       setLoading(true)
-      await signup(emailRef.current.value, passwordRef.current.value)
-      history.push("/")
+      await login(emailRef.current.value, passwordRef.current.value)
+      history.push("/dash")
     } catch {
-      setError("Failed to create an account")
+      setError("Failed to log in")
     }
 
     setLoading(false)
   }
 
-
   return (
     <BoxContainer>
-      <FormContainer>
       {error && <Alert variant="danger">{error}</Alert>}
-        <Input type="email" placeholder="Email" ref={emailRef} required />
+      <FormContainer>
+        <Input type="email" placeholder="Email" ref={emailRef} required/>
         <Input type="password" placeholder="Password" ref={passwordRef} required />
-        <Input type="password" placeholder="Confirm Password" ref={passwordConfirmRef} required />
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
-      <SubmitButton type="submit" onClick={handleSubmit}>Signup</SubmitButton>
+      <MutedLink href="/forgot-password">Forgot your password?</MutedLink>
+      <Marginer direction="vertical" margin="1.6em" />
+      <SubmitButton type="submit" onClick={handleSubmit}>Signin</SubmitButton>
       <Marginer direction="vertical" margin="1em" />
       <MutedLink href="#">
-        Already have an account?
-        <BoldLink href="#" onClick={switchToSignin}>
-          Signin
+        Don't have an account?{" "}
+        <BoldLink href="#" onClick={switchToSignup}>
+          Signup
         </BoldLink>
       </MutedLink>
     </BoxContainer>
