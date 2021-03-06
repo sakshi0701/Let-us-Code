@@ -3,6 +3,10 @@ import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 
+import Navbar from "./navbar/Navbar";
+import './dash.css';
+import Footer from "./footer/Footer";
+
 export function UpdateProfile() {
   const emailRef = useRef()
   const passwordRef = useRef()
@@ -43,8 +47,10 @@ export function UpdateProfile() {
 
   return (
     <>
-      <Card>
-        <Card.Body>
+    <Navbar />
+    {/* <div className="main"> */}
+      <div className="card">
+        <div className="card-body">
           <h2 className="text-center mb-4">Update Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
@@ -73,15 +79,17 @@ export function UpdateProfile() {
                 placeholder="Leave blank to keep the same"
               />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="update-btn" type="submit">
               Update
             </Button>
           </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
+        </div>
+      </div>
+      <div className="cancel-btn">
         <Link to="/dash">Cancel</Link>
       </div>
+      {/* </div> */}
+      <Footer />
     </>
   )
 }
