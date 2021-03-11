@@ -48,7 +48,7 @@ export function Dashboard() {
         </div>
       </div>
       <div className="profile w-100 text-center mt-2 mb-10">
-        <button className="logout-btn" variant="link" onClick={handleLogout}>
+        <button className="logout-login-btn" variant="link" onClick={handleLogout}>
           Log Out
         </button>
       </div>

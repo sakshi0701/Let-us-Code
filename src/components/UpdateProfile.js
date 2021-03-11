@@ -48,7 +48,9 @@ export function UpdateProfile() {
   return (
     <>
       <Navbar />
-      <h5>Your Profile</h5>
+      <div className="h5">
+        <h5>Your Profile</h5>
+      </div>
       <div className="main">
         <div className="card">
           <div className="card-body">
@@ -80,14 +82,14 @@ export function UpdateProfile() {
                   placeholder="Leave blank to keep the same"
                 />
               </Form.Group>
-              <Button disabled={loading} id="update" className="update-btn" type="submit">
+              <button disabled={loading} id="update" className="update-btn" type="submit">
                 Update
-            </Button>
+            </button>
             </Form>
           </div>
         </div>
         <div className="cancel-btn">
-          <Link to="/dash">Cancel</Link>
+          <a href="/dash">Cancel</a>
         </div>
       </div>
       <Footer />

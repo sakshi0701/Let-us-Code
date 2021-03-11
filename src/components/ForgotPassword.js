@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link } from "react-router-dom"
+import Navbar from "./navbar/Navbar"
+import Footer from "./footer/Footer"
 
 export function ForgotPassword() {
   const emailRef = useRef()
@@ -28,28 +30,35 @@ export function ForgotPassword() {
 
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Password Reset</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          {message && <Alert variant="success">{message}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
-              Reset Password
-            </Button>
-          </Form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/login">Login</Link>
-          </div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
+      <Navbar />
+      <div className="h5">
+        <h5>Reset</h5>
       </div>
+      <div className="main">
+        <div className="card">
+          <div className="card-body">
+            <h2 className="text-center mb-4">Password Reset</h2>
+            {error && <Alert variant="danger">{error}</Alert>}
+            {message && <Alert variant="success">{message}</Alert>}
+            <Form onSubmit={handleSubmit}>
+              <Form.Group id="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" ref={emailRef} required />
+              </Form.Group>
+              <Button disabled={loading} className="w-100 reset-pass" type="submit">
+                Reset Password
+            </Button>
+            </Form>
+            <div className="w-100 text-center mt-3 logout-login-btn">
+              <a href="/login">Login</a>
+            </div>
+          </div>
+        </div>
+        <div className="w-100 text-center mt-2" id="reset-signup-btn">
+          Need an account? <a href="/signup">Sign Up</a>
+        </div>
+      </div>
+      <Footer />
     </>
   )
 }
