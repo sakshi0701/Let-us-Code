@@ -21,7 +21,6 @@ export default function LoginForm(props) {
   const passwordRef = useRef()
   const { login } = useAuth()
   const [error, setError] = useState("")
-  const [loading, setLoading] = useState(false)
   const history = useHistory()
 
   async function handleSubmit(e) {
@@ -29,14 +28,11 @@ export default function LoginForm(props) {
 
     try {
       setError("")
-      setLoading(true)
       await login(emailRef.current.value, passwordRef.current.value)
       history.push("/dash")
     } catch {
       setError("Failed to log in")
     }
-
-    setLoading(false)
   }
 
   return (
