@@ -4,8 +4,8 @@ import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 
 import Navbar from "./navbar/Navbar";
-import './dash.css';
 import Footer from "./footer/Footer";
+import './dash.css';
 
 export function UpdateProfile() {
   const emailRef = useRef()
@@ -47,48 +47,49 @@ export function UpdateProfile() {
 
   return (
     <>
-    <Navbar />
-    {/* <div className="main"> */}
-      <div className="card">
-        <div className="card-body">
-          <h2 className="text-center mb-4">Update Profile</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                ref={emailRef}
-                required
-                defaultValue={currentUser.email}
-              />
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                ref={passwordRef}
-                placeholder="Leave blank to keep the same"
-              />
-            </Form.Group>
-            <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control
-                type="password"
-                ref={passwordConfirmRef}
-                placeholder="Leave blank to keep the same"
-              />
-            </Form.Group>
-            <Button disabled={loading} className="update-btn" type="submit">
-              Update
+      <Navbar />
+      <h5>Your Profile</h5>
+      <div className="main">
+        <div className="card">
+          <div className="card-body">
+            <h2 className="text-center mb-4">Update Profile</h2>
+            {error && <Alert variant="danger">{error}</Alert>}
+            <Form onSubmit={handleSubmit}>
+              <Form.Group id="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  ref={emailRef}
+                  required
+                  defaultValue={currentUser.email}
+                />
+              </Form.Group>
+              <Form.Group id="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  ref={passwordRef}
+                  placeholder="Leave blank to keep the same"
+                />
+              </Form.Group>
+              <Form.Group id="password-confirm">
+                <Form.Label>Password Confirmation</Form.Label>
+                <Form.Control
+                  type="password"
+                  ref={passwordConfirmRef}
+                  placeholder="Leave blank to keep the same"
+                />
+              </Form.Group>
+              <Button disabled={loading} id="update" className="update-btn" type="submit">
+                Update
             </Button>
-          </Form>
+            </Form>
+          </div>
+        </div>
+        <div className="cancel-btn">
+          <Link to="/dash">Cancel</Link>
         </div>
       </div>
-      <div className="cancel-btn">
-        <Link to="/dash">Cancel</Link>
-      </div>
-      {/* </div> */}
       <Footer />
     </>
   )

@@ -24,7 +24,6 @@
 
 ::-webkit-scrollbar-thumb {
   background:  rgb(255, 145, 0);
-  /* border: 1px solid black; */
   border-radius: 25px;
 }
 
@@ -91,14 +90,3 @@
   justify-content: center;
 }
 
-.footer {
-  height: 15vh;
-  width: 100%;
-  margin-top: 45px;
-  border-top: 2px solid orange;
-  background: rgb(37, 37, 37);
-  color: orange;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

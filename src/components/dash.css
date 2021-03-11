@@ -22,17 +22,30 @@ body{
     border: 2px solid rgb(219, 143, 0);
     border-radius: 5px;
     background: orange;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    font-size: 30px;
-    color: rgb(39, 39, 39);
 }
 
 .btn:hover {
     background-color: rgb(255, 176, 30);
     border-radius: 5px;
-    color: rgb(44, 44, 44);
     transition: 1s;
+    cursor: pointer;
+}
+
+.btn a {
+    text-decoration: none;
+    background: orange;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(39, 39, 39);
+
+}
+
+.btn a:hover {
+    background-color: rgb(255, 176, 30);
+    border-radius: 5px;
+    color: rgb(44, 44, 44);
+    transition: 0.5s;
     cursor: pointer;
     font-weight: bolder;
 }
@@ -99,4 +112,30 @@ body{
     border-radius: 20px;
     color: rgb(0, 0, 0);
     font-weight: bold;
+}
+
+#email {
+    margin: 7px;
+    padding: 7px;
+}
+
+#password {
+    margin: 7px;
+    padding: 7px;
+}
+
+#password-confirm {
+    margin: 7px;
+    padding: 7px;
+}
+
+#update {
+    font-size: 20px;
+    margin: 10px 55px;
+}
+
+h5 {
+    margin-top: 100px;
+    color: rgba(255, 166, 0, 0.329);
+    font-size: 170px;
 }

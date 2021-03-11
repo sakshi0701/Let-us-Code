@@ -24,13 +24,17 @@ export function Dashboard() {
 
   return (
     <>
-    <Navbar />
+      <Navbar />
       <div class="main">
         <button class="btn">
-          Resources
+          <a href="/resources">
+            Resources
+          </a>
         </button>
         <button class="btn">
-          Code
+          <a href="/code">
+            Start Coding!
+          </a>
         </button>
       </div>
       <div className="card">

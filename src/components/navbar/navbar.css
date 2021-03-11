@@ -6,9 +6,15 @@
     width: 99%;
     background: rgb(61, 61, 61);
     border-bottom: 2px solid orange;
-    color: orange;
     font-size: 40px;
     font-weight: bolder;
     top: 0;
     position: fixed;
+    z-index: 200;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: orange;
+    background: rgb(61, 61, 61);
 }
