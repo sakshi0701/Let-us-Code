@@ -7,6 +7,7 @@ import { ForgotPassword } from "./components/ForgotPassword";
 import { Code } from './components/editor/Code'
 import PrivateRoute from './components/PrivateRoute';
 import { BrowserRouter as Router, Route } from "react-router-dom"
+import Resources from './components/resources/Resources';
 
 // import Footer from './components/footer/Footer'
 
@@ -28,6 +29,7 @@ function App() {
           <PrivateRoute path="/dash" component={Dashboard} />
           <PrivateRoute path="/update-profile" component={UpdateProfile} />
           <PrivateRoute path="/code" component={Code} />
+          <PrivateRoute path="/resources" component={Resources} />
           <Route path="/forgot-password" component={ForgotPassword} />
           <FrontPage />
         </AuthProvider>
