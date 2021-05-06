@@ -2,7 +2,7 @@
 
 This website gives a platform for the users to code in HTML, CSS and JavaScript and develop through the resources provided.
 
-[Visit Website](https://the-food-icon.herokuapp.com/login/ "Welcome to the Let us code!")
+[Visit Website](https://let-us-code.herokuapp.com/login "Welcome to the Let us code!")
 
 ## To run the application:
 
