@@ -20,7 +20,7 @@ This website gives a platform for the users to code in HTML, CSS and JavaScript 
 ---
 
 ### Features being worked on:
-- A open chat platform where a user can post or clear doubts.
+- A open chat platform where a user can post their doubts or clear doubts others' doubts as well.
 
 ---
 <h4 align="center">Sakshi Dwivedi | sakshithedwivedi@gmail.com</h4>
